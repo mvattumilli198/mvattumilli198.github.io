@@ -1,404 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Horizon Retention & Success Hub</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Horizon Retention & Success Hub – Portfolio</title>
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-  <header class="site-header">
-    <div class="container header-content">
-      <div>
-        <h1>Horizon Retention &amp; Success Hub</h1>
-        <p class="tagline">
-          A data-driven early-alert platform to support student success and retention.
-        </p>
-      </div>
-      <nav class="nav">
-        <a href="#home">Home</a>
-        <a href="#problem">Problem</a>
-        <a href="#research">Research</a>
-        <a href="#solution">Solution</a>
-        <a href="#architecture">Architecture &amp; Data</a>
-        <a href="#dashboard">Dashboard</a>
-        <a href="#ethics">Ethics</a>
-        <a href="#lessons">Lessons</a>
-        <a href="#appendix">Appendix</a>
-      </nav>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="container">
+      <h1 class="title">Horizon Retention & Success Hub</h1>
+      <p class="subtitle">A Data-Driven Early-Alert Platform for Student Success</p>
+      <p class="team">Group 5 • Horizons University</p>
     </div>
   </header>
 
-  <main>
-    <!-- =================== HOME / EXEC SUMMARY =================== -->
-    <section id="home" class="section">
-      <div class="container">
-        <h2>Home &amp; Executive Summary</h2>
+  <!-- SECTION: EXECUTIVE SUMMARY -->
+  <section class="section">
+    <h2>Executive Summary</h2>
+    <p>
+      The Horizon Retention & Success Hub is an early-alert platform designed to help academic
+      advisors identify and support at-risk students. It brings together GPA trends, attendance,
+      LMS engagement, enrollments, and financial indicators for 5,000 synthetic students
+      across four terms. A trained XGBoost model predicts Low, Medium, and High academic risk
+      with ~92% accuracy. A React dashboard allows advisors and students to view clear insights,
+      monitor progress, and take timely action.
+    </p>
+  </section>
 
-        <div class="two-column">
-          <div>
-            <h3>Project Overview</h3>
-            <p>
-              The <strong>Horizon Retention &amp; Success Hub</strong> is a
-              web-based early-alert platform designed to help a university identify
-              and support students who are at risk of struggling academically.
-              The system brings together fragmented data from multiple sources
-              (grades, LMS activity, attendance, financial indicators, and advising notes)
-              into a single, actionable view for academic advisors and students.
-            </p>
-            <p>
-              Using a synthetic dataset of about 5,000 students across four terms,
-              we engineered features from 11 tables and trained a multi-class
-              XGBoost model to classify each student-term record as
-              <em>Low</em>, <em>Medium</em>, or <em>High</em> risk.
-              The model reached roughly 92% accuracy on held-out test data.
-              These predictions are stored in PostgreSQL and exposed through
-              a Spring Boot API.
-            </p>
-            <p>
-              On the frontend, a React application provides separate dashboards
-              for advisors and students. Advisors can quickly scan high-risk
-              students, drill into a profile, and view or add advising notes.
-              Students can see their own GPA trends, attendance and engagement
-              summaries, and simple recommendations. While all data is synthetic,
-              the workflow mirrors real student-success platforms and can be
-              adapted to real institutional contexts.
-            </p>
-          </div>
-          <div class="card">
-            <h3>Team</h3>
-            <ul>
-              <li>Group 5</li>
-              <li>Team Member 1</li>
-              <li>Team Member 2</li>
-              <li>Team Member 3</li>
-              <li>Team Member 4</li>
-              <li>Team Member 5</li>
-            </ul>
-            <h3>Live Dashboard</h3>
-            <p>
-              Deployed Frontend (Vercel):<br />
-              <a href="https://horizon-success-hub-final1.vercel.app/login" target="_blank">
-                horizon-success-hub-final1.vercel.app/login
-              </a>
-            </p>
-            <p class="small-text">
-              <strong>Advisor Login:</strong><br />
-              Email: advisor@horizonu.edu<br />
-              Password: advisor123
-            </p>
-            <p class="small-text">
-              <strong>Student Login:</strong><br />
-              Email: student@horizonu.edu<br />
-              Password: sandeep123
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- =================== PROBLEM CONTEXT & STAKEHOLDERS =================== -->
-    <section id="problem" class="section alt">
-      <div class="container">
-        <h2>Problem Context &amp; Stakeholder Perspectives</h2>
-
-        <div class="two-column">
-          <div>
-            <h3>Problem Overview</h3>
-            <p>
-              Universities are under pressure to improve student retention and graduation
-              rates, but the information needed to spot students who are slipping behind
-              is scattered across multiple systems. Advisors may see grades in one
-              interface, attendance in another, LMS activity in a different portal, and
-              financial indicators elsewhere. Without a unified, intelligent view, at-risk
-              students may only be noticed after failing multiple courses or disengaging
-              completely.
-            </p>
-          </div>
-          <div>
-            <h3>Stakeholders</h3>
-            <ul>
-              <li>
-                <strong>Academic Advisors:</strong> need an integrated view of each
-                student’s performance, engagement, and history of interventions to decide
-                whom to reach out to first and how to support them.
-              </li>
-              <li>
-                <strong>Students:</strong> often see information in fragments; they
-                benefit from a clear, single dashboard that shows where they stand and
-                what they can do next.
-              </li>
-              <li>
-                <strong>University Leadership:</strong> cares about trends by major,
-                term, and risk segment; while our prototype focuses on advisor and
-                student views, the architecture is ready for institutional analytics.
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- =================== RESEARCH & INSIGHTS =================== -->
-    <section id="research" class="section">
-      <div class="container">
-        <h2>Research &amp; Insights</h2>
-
-        <div class="two-column">
-          <div>
-            <h3>Literature Highlights</h3>
-            <ul>
-              <li>Early drops in attendance and LMS activity often precede GPA declines.</li>
-              <li>Combining multiple dimensions (GPA, engagement, financial factors) usually outperforms single-metric approaches.</li>
-              <li>Early-warning systems are most effective when they lead to clear, actionable workflows for advisors.</li>
-              <li>Ethical design and transparency around risk scores are critical to avoid stigmatizing students.</li>
-            </ul>
-          </div>
-          <div>
-            <h3>Insights Used in Our Design</h3>
-            <ul>
-              <li>We engineered features from GPA, attendance, LMS activity, and financial variables.</li>
-              <li>The advisor dashboard highlights High-risk students and supports filtering and drill-down.</li>
-              <li>The student view focuses on simple KPIs and clear explanations of why they are in a given risk tier.</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- =================== PROPOSED SOLUTION & CHARTER =================== -->
-    <section id="solution" class="section alt">
-      <div class="container">
-        <h2>Proposed Solution &amp; Project Charter</h2>
-
-        <div class="two-column">
-          <div>
-            <h3>Solution Overview</h3>
-            <p>
-              The Horizon Retention &amp; Success Hub is a full-stack web application that
-              combines a React frontend, a Spring Boot backend with JWT authentication, a
-              PostgreSQL database with 11 tables, and an offline XGBoost model that
-              generates student-term risk predictions.
-            </p>
-            <ul>
-              <li><strong>Advisor Portal:</strong> risk-tier dashboard, student details, and advising notes.</li>
-              <li><strong>Student Portal:</strong> personalized dashboard with GPA trends and recommendations.</li>
-              <li><strong>ML Risk Engine:</strong> multi-class XGBoost model predicting Low/Medium/High risk.</li>
-            </ul>
-          </div>
-          <div>
-            <h3>Project Charter (Summary)</h3>
-            <ul>
-              <li><strong>Goal:</strong> Help advisors identify at-risk students early and support data-informed interventions.</li>
-              <li><strong>Scope:</strong> Synthetic data, predictive model, web dashboards, and basic note-taking workflow.</li>
-              <li><strong>Out of Scope:</strong> Real student data, full SIS/LMS integration, and production security hardening.</li>
-              <li><strong>Key Stakeholders:</strong> advisors, students, academic support staff, and institutional leaders.</li>
-              <li><strong>Deliverables:</strong> dataset, trained model, backend APIs, dashboards, written report, and portfolio website.</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- =================== ARCHITECTURE & DATA =================== -->
-    <section id="architecture" class="section">
-      <div class="container">
-        <h2>Architecture &amp; Data Design</h2>
-
-        <div class="two-column">
-          <div>
-            <h3>System Architecture</h3>
-            <p>
-              The system follows a three-tier design:
-              a React frontend, a Spring Boot REST API, and a PostgreSQL database.
-              An offline Python pipeline (Pandas + XGBoost) generates risk scores that
-              are imported into the <code>riskscores</code> table.
-            </p>
-            <div class="image-placeholder">
-              <p>Architecture Diagram Placeholder</p>
-              <!-- Replace src with your real image file when ready -->
-              <!-- <img src="images/architecture.png" alt="System architecture diagram" /> -->
-            </div>
-
-            <h3>Machine Learning Pipeline</h3>
-            <p>
-              We load and join tables from the synthetic Excel workbook, engineer
-              student-term features, and train an XGBoost classifier to predict risk
-              tiers. The model is evaluated on a stratified 80/20 split and then used to
-              score all 20,000 student-term rows.
-            </p>
-            <div class="image-placeholder">
-              <p>ML Pipeline Diagram Placeholder</p>
-            </div>
-          </div>
-
-          <div>
-            <h3>ER Diagram &amp; Data Model</h3>
-            <p>
-              The PostgreSQL schema includes entities for students, courses, terms,
-              enrollments, grades, attendance, LMS events, term GPAs, financial aid,
-              risk scores, and advising notes. This design makes it straightforward to
-              reconstruct a student’s history and compute features for modeling.
-            </p>
-            <div class="image-placeholder">
-              <p>ER Diagram Placeholder</p>
-            </div>
-
-            <h3>Data Summary</h3>
-            <ul>
-              <li>~5,000 students across 4 academic terms.</li>
-              <li>11 tables including enrollments, grades, attendance, and LMS events.</li>
-              <li>~20,000 student-term risk predictions from the XGBoost model.</li>
-              <li>~18,000 synthetic advising notes representing different intervention types.</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- =================== DASHBOARD & DATA ANALYSIS =================== -->
-    <section id="dashboard" class="section alt">
-      <div class="container">
-        <h2>Dashboard &amp; Data Analysis</h2>
-
-        <div class="two-column">
-          <div>
-            <h3>Advisor Dashboard</h3>
-            <p>
-              The advisor dashboard opens with key metrics such as total students,
-              High-risk student count, average term GPA, and average attendance.
-              Below, a table lists students with their major, current term GPA,
-              attendance, engagement score, and risk tier badge.
-            </p>
-            <p>
-              Advisors can filter by risk tier or GPA and click into a student profile
-              to see term-by-term GPA trends, engagement summaries, and notes.
-            </p>
-            <div class="image-placeholder">
-              <p>Advisor Dashboard Screenshot Placeholder</p>
-            </div>
-          </div>
-
-          <div>
-            <h3>Student Dashboard</h3>
-            <p>
-              The student dashboard focuses on self-awareness. It surfaces cumulative
-              GPA, current term GPA, attendance percentage, a simple engagement score,
-              and a small GPA trend chart. A brief explanation of the student’s risk
-              tier and a few suggestions are shown in plain language.
-            </p>
-            <div class="image-placeholder">
-              <p>Student Dashboard Screenshot Placeholder</p>
-            </div>
-
-            <h3>Key Insights</h3>
-            <ul>
-              <li>
-                High-risk students tend to show both lower attendance and lower LMS
-                engagement than peers, even before grades drop sharply.
-              </li>
-              <li>
-                Students with higher financial stress indicators also appear more
-                frequently in Medium and High risk tiers, suggesting the value of
-                pairing academic and financial support.
-              </li>
-              <li>
-                The dashboard makes these patterns visible at a glance so advisors can
-                prioritize outreach and track whether risk levels improve over time.
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- =================== ETHICAL & SOCIAL CONSIDERATIONS =================== -->
-    <section id="ethics" class="section">
-      <div class="container">
-        <h2>Ethical &amp; Social Considerations</h2>
-
-        <div class="two-column">
-          <div>
-            <h3>Fairness &amp; Bias</h3>
-            <p>
-              In a real deployment, risk models must be evaluated for fairness across
-              demographic groups, such as gender, residency status, or first-generation
-              status. Risk scores should be treated as signals for support, not as
-              labels of student potential or worth.
-            </p>
-          </div>
-          <div>
-            <h3>Privacy &amp; Transparency</h3>
-            <p>
-              Our prototype uses synthetic data only. For actual student data, strict
-              controls, audit logs, and compliance with FERPA would be essential.
-              We deliberately expose relatively simple metrics (GPA, attendance,
-              engagement, and risk tier) to keep the system understandable to both
-              advisors and students.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- =================== LESSONS LEARNED & REFLECTION =================== -->
-    <section id="lessons" class="section alt">
-      <div class="container">
-        <h2>Lessons Learned &amp; Team Reflection</h2>
-
-        <div class="two-column">
-          <div>
-            <h3>Technical Lessons</h3>
-            <ul>
-              <li>Designing a relational schema upfront made feature engineering and queries much easier later.</li>
-              <li>Integrating Spring Boot, JWT authentication, and a React frontend required careful coordination of routes and roles.</li>
-              <li>Working with a multi-class XGBoost model reinforced our understanding of train–test splits, evaluation metrics, and model persistence.</li>
-            </ul>
-          </div>
-          <div>
-            <h3>Process &amp; Collaboration</h3>
-            <ul>
-              <li>We learned to align early on project scope and user stories to avoid rework.</li>
-              <li>Sharing a consistent understanding of advisor vs. student experience helped keep the UI coherent.</li>
-              <li>Breaking work into backend, data, ML, and frontend tracks allowed us to move in parallel and then integrate.</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- =================== APPENDIX / EXTRAS =================== -->
-    <section id="appendix" class="section">
-      <div class="container">
-        <h2>Appendix &amp; Extra Materials</h2>
-
-        <div class="two-column">
-          <div>
-            <h3>Technical Artifacts (Examples)</h3>
-            <ul>
-              <li>Python scripts for feature engineering and XGBoost training.</li>
-              <li>SQL DDL for all PostgreSQL tables used in the project.</li>
-              <li>Postman collections for testing the Spring Boot APIs.</li>
-              <li>Model evaluation outputs (classification report, confusion matrix).</li>
-            </ul>
-          </div>
-          <div>
-            <h3>Links (Fill in with Your Repos)</h3>
-            <ul>
-              <li>GitHub Repo – Frontend (React): <code>https://github.com/USERNAME/horizon-frontend</code></li>
-              <li>GitHub Repo – Backend (Spring Boot): <code>https://github.com/USERNAME/horizon-backend</code></li>
-              <li>Dataset / Synthetic Data Documentation (optional link)</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container">
-      <p>&copy; 2025 Horizon Retention &amp; Success Hub &mdash; Group 5</p>
+  <!-- SECTION: PROBLEM CONTEXT -->
+  <section class="section">
+    <h2>Problem Context & Stakeholders</h2>
+    <div class="card">
+      <ul>
+        <li>Advisors struggle to track risk signals spread across multiple systems.</li>
+        <li>Students rely on fragmented views of grades, attendance, and financial status.</li>
+        <li>Universities require better visibility into retention patterns.</li>
+      </ul>
     </div>
+  </section>
+
+  <!-- SECTION: PROPOSED SOLUTION -->
+  <section class="section">
+    <h2>Proposed Solution</h2>
+    <p>
+      Our platform provides unified dashboards, ML-powered risk predictions, and
+      advisor workflows for intervention.
+    </p>
+
+    <div class="image-block">
+      <h3>System Architecture</h3>
+      <img src="images/system_architecture_diagram.png" alt="System Architecture Diagram" class="image"/>
+    </div>
+
+  </section>
+
+  <!-- SECTION: DATA DESIGN -->
+  <section class="section">
+    <h2>Data Design</h2>
+    <p>
+      The project uses 11 synthetic tables modeling students, courses, enrollments,
+      attendance, LMS events, term GPAs, financial aid, risk scores, and advising notes.
+    </p>
+
+    <div class="image-block">
+      <h3>ER Diagram</h3>
+      <img src="images/Screenshot 2025-11-02 124915.png" alt="ER Diagram" class="image"/>
+    </div>
+  </section>
+
+  <!-- SECTION: ML PIPELINE -->
+  <section class="section">
+    <h2>Machine Learning Pipeline</h2>
+    <p>
+      We trained a multi-class XGBoost model using engineered features representing
+      academic, engagement, and financial behaviors.
+    </p>
+    <div class="image-block">
+      <h3>ML Pipeline Flow</h3>
+      <img src="images/ml_pipeline_flow.png" alt="ML Pipeline Diagram" class="image"/>
+    </div>
+  </section>
+
+  <!-- SECTION: DASHBOARD -->
+  <section class="section">
+    <h2>Dashboard Overview</h2>
+    <p>The dashboard supports both advisor and student views.</p>
+
+    <div class="image-block">
+      <h3>Advisor Dashboard</h3>
+      <img src="images/advisor_dashboard_overview.png" alt="Advisor Dashboard Screenshot" class="image"/>
+    </div>
+
+    <div class="image-block">
+      <h3>Student Dashboard</h3>
+      <img src="images/student_dashboard_overview.png" alt="Student Dashboard Screenshot" class="image"/>
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>© 2025 Horizon Retention & Success Hub – Project Portfolio</p>
   </footer>
+
 </body>
 </html>
