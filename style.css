@@ -404,13 +404,28 @@ code {
   border: 1px solid rgba(148, 163, 184, 0.4);
   padding: 6px;
   overflow: hidden;
+  position: relative;
+  cursor: zoom-in;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.image-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.55);
 }
 
 .image-card img {
   width: 100%;
+  height: auto;
   display: block;
   border-radius: 10px;
+  transition: transform 0.35s ease;
 }
+
+.image-card:hover img {
+  transform: scale(1.08);
+}
+
 
 .image-card figcaption {
   font-size: 11px;
