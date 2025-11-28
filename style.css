@@ -1,76 +1,124 @@
-/* GLOBAL */
+/* GLOBAL ----------------------------- */
 body {
-  font-family: "Inter", Arial, sans-serif;
   margin: 0;
-  padding: 0;
-  background: #f7f9fc;
-  color: #1a1a1a;
-  line-height: 1.6;
-}
-
-.container {
-  width: 90%;
-  max-width: 900px;
-  margin: auto;
-}
-
-h1, h2, h3 {
-  font-weight: 700;
+  font-family: "Inter", Arial, sans-serif;
+  background: #f5f7fa;
   color: #222;
 }
 
-h2 {
-  margin-bottom: 0.4rem;
-  border-left: 5px solid #0066ff;
-  padding-left: 10px;
+/* NAVBAR ----------------------------- */
+.navbar {
+  background: #ffffffcc;
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid #e5e5e5;
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
-.section {
-  background: #fff;
-  margin: 2rem auto;
-  padding: 2rem;
-  border-radius: 12px;
-  box-shadow: 0 6px 14px rgba(0,0,0,0.08);
+.nav-container {
+  max-width: 1100px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  align-items: center;
 }
 
-.image {
-  width: 100%;
-  border-radius: 12px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
-  margin-top: 1rem;
+.logo {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #005eff;
 }
 
-.header {
-  text-align: center;
-  padding: 3rem 1rem;
-  background: linear-gradient(135deg, #0056ff, #00b4ff);
+.nav-links a {
+  margin-left: 1.4rem;
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+}
+
+.nav-links a:hover {
+  color: #005eff;
+}
+
+/* HERO SECTION ----------------------------- */
+.hero {
+  height: 330px;
+  background: linear-gradient(135deg, #005eff, #00c2ff);
   color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
 }
 
-.title {
-  font-size: 2.4rem;
+.hero h1 {
+  font-size: 2.8rem;
   margin-bottom: 0.5rem;
 }
 
-.subtitle {
+.tagline {
   font-size: 1.2rem;
   opacity: 0.9;
 }
 
 .team {
-  margin-top: 1rem;
+  margin-top: 0.8rem;
   font-weight: 500;
 }
 
-.card {
-  background: #eef3ff;
-  padding: 1rem;
-  border-radius: 10px;
-  margin-top: 1rem;
+/* SECTIONS ----------------------------- */
+.section {
+  max-width: 1100px;
+  margin: 3rem auto;
+  background: white;
+  padding: 2.2rem;
+  border-radius: 14px;
+  box-shadow: 0 8px 18px rgba(0,0,0,0.08);
 }
 
+.section.alt {
+  background: #eef3ff;
+}
+
+.section h2 {
+  border-left: 5px solid #005eff;
+  padding-left: 10px;
+}
+
+/* CARDS ----------------------------- */
+.card-grid {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.card {
+  flex: 1;
+  min-width: 260px;
+  background: white;
+  padding: 1.4rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.06);
+}
+
+/* IMAGES ----------------------------- */
+.image-block {
+  margin-top: 1.8rem;
+}
+
+.image-block img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.12);
+}
+
+/* FOOTER ----------------------------- */
 .footer {
-  text-align: center;
+  margin-top: 4rem;
   padding: 2rem;
+  text-align: center;
   color: #777;
 }
