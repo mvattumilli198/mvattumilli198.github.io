@@ -3,16 +3,28 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Horizon Retention & Success Hub | Project Portfolio</title>
+  <title>Horizon Retention & Success Hub | Portfolio</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+
+  <!-- Icons -->
+  <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+
+  <!-- CSS -->
   <link rel="stylesheet" href="style.css">
+
+  <!-- Scroll Reveal -->
+  <script src="https://unpkg.com/scrollreveal"></script>
 </head>
 
 <body>
 
-  <!-- Navigation Bar -->
+  <!-- NAVIGATION BAR -->
   <nav class="navbar">
     <div class="nav-container">
       <div class="logo">Horizon Hub</div>
+
       <div class="nav-links">
         <a href="#summary">Summary</a>
         <a href="#problem">Problem</a>
@@ -20,15 +32,20 @@
         <a href="#data">Data</a>
         <a href="#dashboard">Dashboard</a>
       </div>
+
+      <button id="themeToggle" class="theme-btn">
+        <i data-feather="moon"></i>
+      </button>
     </div>
   </nav>
 
   <!-- HERO SECTION -->
   <header class="hero">
-    <div class="hero-content">
-      <h1>Horizon Retention & Success Hub</h1>
-      <p class="tagline">A Data-Driven Early Alert Platform for Student Success</p>
-      <p class="team">Developed by Group 5 • Horizon University</p>
+    <div class="hero-inner">
+      <h1 class="glow">Horizon Retention & Success Hub</h1>
+      <p class="subtitle">A Modern Student Success Prediction & Analytics Platform</p>
+
+      <a href="#summary" class="cta-btn">Explore the Project</a>
     </div>
   </header>
 
@@ -36,61 +53,63 @@
   <section class="section" id="summary">
     <h2>Executive Summary</h2>
     <p>
-      The Horizon Retention & Success Hub is a student-success analytics platform designed to help
-      advisors identify at-risk students early using academic, engagement, and financial indicators.
-      The system integrates 11 synthetic datasets, a trained XGBoost prediction model (~92% accuracy),
-      a secure Spring Boot backend, and a modern React dashboard for advisors and students.
+      The Horizon Retention & Success Hub is a modern early-alert analytics platform designed to help
+      advisors identify at-risk students using 11 integrated datasets — including GPA trends, attendance,
+      LMS activity, financial aid indicators, and engagement behaviors.
+    </p>
+
+    <p>
+      Using an XGBoost multi-class classifier (~92% accuracy), the system predicts risk tiers and displays
+      them using a secure Spring Boot backend and a responsive React dashboard for advisors and students.
     </p>
   </section>
 
-  <!-- PROBLEM SECTION -->
+  <!-- PROBLEM -->
   <section class="section alt" id="problem">
     <h2>Problem Context & Stakeholders</h2>
     <div class="card-grid">
-      <div class="card">
+      <div class="card reveal">
         <h3>Advisors</h3>
-        <p>Need a consolidated view of academic and engagement trends to spot early warning signs.</p>
+        <p>Need early alerts based on engagement + academic trends.</p>
       </div>
-      <div class="card">
+
+      <div class="card reveal">
         <h3>Students</h3>
-        <p>Currently access fragmented information across LMS, grades, and financial portals.</p>
+        <p>Have fragmented data across LMS, grades, logs, and finances.</p>
       </div>
-      <div class="card">
-        <h3>University Leadership</h3>
-        <p>Require visibility into retention patterns, risk groups, and intervention effectiveness.</p>
+
+      <div class="card reveal">
+        <h3>Leadership</h3>
+        <p>Require visibility into patterns, performance, and risk clusters.</p>
       </div>
     </div>
   </section>
 
-  <!-- SOLUTION SECTION -->
+  <!-- SOLUTION -->
   <section class="section" id="solution">
     <h2>Proposed Solution</h2>
     <p>
-      A unified platform combining dashboards, ML-based risk scoring, academic insights, and secure
-      advisor workflows.
+      A unified analytics platform with dashboards, risk predictions, data insights, and structured advising support.
     </p>
 
-    <div class="image-block">
+    <div class="image-block reveal">
       <h3>System Architecture</h3>
-      <img src="images/system_architecture_diagram.png" alt="System Architecture Diagram">
+      <img src="images/system_architecture_diagram.png">
     </div>
 
-    <div class="image-block">
+    <div class="image-block reveal">
       <h3>Machine Learning Pipeline</h3>
-      <img src="images/ml_pipeline_flow.png" alt="ML Pipeline Flow Diagram">
+      <img src="images/ml_pipeline_flow.png">
     </div>
   </section>
 
   <!-- DATA MODEL -->
   <section class="section alt" id="data">
     <h2>Data Design & ER Diagram</h2>
-    <p>
-      The synthetic dataset models 5,000 students with complete academic, engagement, and
-      financial histories across four academic terms.
-    </p>
+    <p>The dataset models 5,000 students across four academic terms, representing full academic + engagement history.</p>
 
-    <div class="image-block">
-      <img src="images/Screenshot 2025-11-02 124915.png" alt="ER Diagram">
+    <div class="image-block reveal">
+      <img src="images/Screenshot 2025-11-02 124915.png">
     </div>
   </section>
 
@@ -98,21 +117,39 @@
   <section class="section" id="dashboard">
     <h2>Dashboard Overview</h2>
 
-    <div class="image-block">
+    <div class="image-block reveal">
       <h3>Advisor Dashboard</h3>
-      <img src="images/advisor_dashboard_overview.png" alt="Advisor Dashboard">
+      <img src="images/advisor_dashboard_overview.png">
     </div>
 
-    <div class="image-block">
+    <div class="image-block reveal">
       <h3>Student Dashboard</h3>
-      <img src="images/student_dashboard_overview.png" alt="Student Dashboard">
+      <img src="images/student_dashboard_overview.png">
     </div>
   </section>
 
   <!-- FOOTER -->
   <footer class="footer">
-    <p>© 2025 Horizon Retention & Success Hub — Project Portfolio</p>
+    <p>© 2025 Horizon Retention & Success Hub — Portfolio Website</p>
   </footer>
+
+  <script>
+    // DARK MODE
+    const btn = document.getElementById('themeToggle');
+    btn.addEventListener('click', () => {
+      document.body.classList.toggle('dark');
+    });
+
+    feather.replace();
+
+    // SCROLL REVEAL
+    ScrollReveal().reveal('.reveal', {
+      delay: 100,
+      distance: '40px',
+      origin: 'bottom',
+      duration: 800
+    });
+  </script>
 
 </body>
 </html>
