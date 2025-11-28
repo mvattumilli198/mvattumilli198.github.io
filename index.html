@@ -1,155 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Horizon Retention & Success Hub | Portfolio</title>
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
-
-  <!-- Icons -->
-  <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
-
-  <!-- CSS -->
-  <link rel="stylesheet" href="style.css">
-
-  <!-- Scroll Reveal -->
-  <script src="https://unpkg.com/scrollreveal"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Horizon Retention & Success Hub – Project Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-  <!-- NAVIGATION BAR -->
-  <nav class="navbar">
-    <div class="nav-container">
-      <div class="logo">Horizon Hub</div>
-
-      <div class="nav-links">
-        <a href="#summary">Summary</a>
-        <a href="#problem">Problem</a>
-        <a href="#solution">Solution</a>
-        <a href="#data">Data</a>
-        <a href="#dashboard">Dashboard</a>
-      </div>
-
-      <button id="themeToggle" class="theme-btn">
-        <i data-feather="moon"></i>
-      </button>
-    </div>
-  </nav>
-
-  <!-- HERO SECTION -->
-  <header class="hero">
-    <div class="hero-inner">
-      <h1 class="glow">Horizon Retention & Success Hub</h1>
-      <p class="subtitle">A Modern Student Success Prediction & Analytics Platform</p>
-
-      <a href="#summary" class="cta-btn">Explore the Project</a>
+  <!-- HEADER -->
+  <header class="header">
+    <div class="container">
+      <h1>Horizon Retention & Success Hub</h1>
+      <p class="subtitle">A Data-Driven Early-Alert System for Student Success</p>
     </div>
   </header>
 
-  <!-- EXECUTIVE SUMMARY -->
-  <section class="section" id="summary">
+  <!-- SECTION: EXEC SUMMARY -->
+  <section class="section">
     <h2>Executive Summary</h2>
     <p>
-      The Horizon Retention & Success Hub is a modern early-alert analytics platform designed to help
-      advisors identify at-risk students using 11 integrated datasets — including GPA trends, attendance,
-      LMS activity, financial aid indicators, and engagement behaviors.
-    </p>
-
-    <p>
-      Using an XGBoost multi-class classifier (~92% accuracy), the system predicts risk tiers and displays
-      them using a secure Spring Boot backend and a responsive React dashboard for advisors and students.
+      The Horizon Retention & Success Hub is a unified analytics and prediction platform that helps
+      academic advisors identify students who may be at academic risk. Using engagement, academic,
+      attendance, and financial indicators, the platform predicts student risk tiers (Low, Medium,
+      High) using a multi-class XGBoost model with approximately 92% accuracy. The system includes a
+      React frontend, a Spring Boot backend with JWT authentication, and a PostgreSQL data layer.
     </p>
   </section>
 
-  <!-- PROBLEM -->
-  <section class="section alt" id="problem">
+  <!-- SECTION: PROBLEM -->
+  <section class="section">
     <h2>Problem Context & Stakeholders</h2>
-    <div class="card-grid">
-      <div class="card reveal">
-        <h3>Advisors</h3>
-        <p>Need early alerts based on engagement + academic trends.</p>
-      </div>
 
-      <div class="card reveal">
+    <div class="grid">
+      <div class="card">
+        <h3>Academic Advisors</h3>
+        <p>Need early alerts based on GPA, attendance, and engagement to prioritize outreach.</p>
+      </div>
+      <div class="card">
         <h3>Students</h3>
-        <p>Have fragmented data across LMS, grades, logs, and finances.</p>
+        <p>Have fragmented information across LMS, grades, and financial systems.</p>
       </div>
-
-      <div class="card reveal">
-        <h3>Leadership</h3>
-        <p>Require visibility into patterns, performance, and risk clusters.</p>
+      <div class="card">
+        <h3>Institution Leadership</h3>
+        <p>Require aggregated insights about student performance and success patterns.</p>
       </div>
     </div>
   </section>
 
-  <!-- SOLUTION -->
-  <section class="section" id="solution">
+  <!-- SECTION: SOLUTION -->
+  <section class="section">
     <h2>Proposed Solution</h2>
     <p>
-      A unified analytics platform with dashboards, risk predictions, data insights, and structured advising support.
+      A three-tier platform integrating machine learning predictions, centralized academic data, and 
+      role-based dashboards for advisors and students.
     </p>
 
-    <div class="image-block reveal">
-      <h3>System Architecture</h3>
-      <img src="images/system_architecture_diagram.png">
-    </div>
+    <h3 class="sub-heading">System Architecture</h3>
+    <img src="images/system_architecture_diagram.png" class="image" />
 
-    <div class="image-block reveal">
-      <h3>Machine Learning Pipeline</h3>
-      <img src="images/ml_pipeline_flow.png">
-    </div>
+    <h3 class="sub-heading">Machine Learning Pipeline</h3>
+    <img src="images/ml_pipeline_flow.png" class="image" />
   </section>
 
-  <!-- DATA MODEL -->
-  <section class="section alt" id="data">
+  <!-- SECTION: DATA -->
+  <section class="section">
     <h2>Data Design & ER Diagram</h2>
-    <p>The dataset models 5,000 students across four academic terms, representing full academic + engagement history.</p>
+    <p>
+      The synthetic dataset includes 5,000 students and 11 interrelated tables representing academic
+      history, LMS interactions, attendance, financial data, and advisor interventions.
+    </p>
 
-    <div class="image-block reveal">
-      <img src="images/Screenshot 2025-11-02 124915.png">
-    </div>
+    <img src="images/Screenshot 2025-11-02 124915.png" class="image" />
   </section>
 
-  <!-- DASHBOARD -->
-  <section class="section" id="dashboard">
+  <!-- SECTION: DASHBOARD -->
+  <section class="section">
     <h2>Dashboard Overview</h2>
 
-    <div class="image-block reveal">
-      <h3>Advisor Dashboard</h3>
-      <img src="images/advisor_dashboard_overview.png">
-    </div>
+    <h3>Advisor Dashboard</h3>
+    <img src="images/advisor_dashboard_overview.png" class="image" />
 
-    <div class="image-block reveal">
-      <h3>Student Dashboard</h3>
-      <img src="images/student_dashboard_overview.png">
-    </div>
+    <h3>Student Dashboard</h3>
+    <img src="images/student_dashboard_overview.png" class="image" />
   </section>
 
   <!-- FOOTER -->
   <footer class="footer">
-    <p>© 2025 Horizon Retention & Success Hub — Portfolio Website</p>
+    <p>© 2025 Horizon Retention & Success Hub – Project Portfolio</p>
   </footer>
-
-  <script>
-    // DARK MODE
-    const btn = document.getElementById('themeToggle');
-    btn.addEventListener('click', () => {
-      document.body.classList.toggle('dark');
-    });
-
-    feather.replace();
-
-    // SCROLL REVEAL
-    ScrollReveal().reveal('.reveal', {
-      delay: 100,
-      distance: '40px',
-      origin: 'bottom',
-      duration: 800
-    });
-  </script>
 
 </body>
 </html>
