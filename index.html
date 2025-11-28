@@ -3,108 +3,115 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Horizon Retention & Success Hub – Portfolio</title>
+  <title>Horizon Retention & Success Hub | Project Portfolio</title>
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-  <!-- HEADER -->
-  <header class="header">
-    <div class="container">
-      <h1 class="title">Horizon Retention & Success Hub</h1>
-      <p class="subtitle">A Data-Driven Early-Alert Platform for Student Success</p>
-      <p class="team">Group 5 • Horizons University</p>
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="logo">Horizon Hub</div>
+      <div class="nav-links">
+        <a href="#summary">Summary</a>
+        <a href="#problem">Problem</a>
+        <a href="#solution">Solution</a>
+        <a href="#data">Data</a>
+        <a href="#dashboard">Dashboard</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <header class="hero">
+    <div class="hero-content">
+      <h1>Horizon Retention & Success Hub</h1>
+      <p class="tagline">A Data-Driven Early Alert Platform for Student Success</p>
+      <p class="team">Developed by Group 5 • Horizon University</p>
     </div>
   </header>
 
-  <!-- SECTION: EXECUTIVE SUMMARY -->
-  <section class="section">
+  <!-- EXECUTIVE SUMMARY -->
+  <section class="section" id="summary">
     <h2>Executive Summary</h2>
     <p>
-      The Horizon Retention & Success Hub is an early-alert platform designed to help academic
-      advisors identify and support at-risk students. It brings together GPA trends, attendance,
-      LMS engagement, enrollments, and financial indicators for 5,000 synthetic students
-      across four terms. A trained XGBoost model predicts Low, Medium, and High academic risk
-      with ~92% accuracy. A React dashboard allows advisors and students to view clear insights,
-      monitor progress, and take timely action.
+      The Horizon Retention & Success Hub is a student-success analytics platform designed to help
+      advisors identify at-risk students early using academic, engagement, and financial indicators.
+      The system integrates 11 synthetic datasets, a trained XGBoost prediction model (~92% accuracy),
+      a secure Spring Boot backend, and a modern React dashboard for advisors and students.
     </p>
   </section>
 
-  <!-- SECTION: PROBLEM CONTEXT -->
-  <section class="section">
+  <!-- PROBLEM SECTION -->
+  <section class="section alt" id="problem">
     <h2>Problem Context & Stakeholders</h2>
-    <div class="card">
-      <ul>
-        <li>Advisors struggle to track risk signals spread across multiple systems.</li>
-        <li>Students rely on fragmented views of grades, attendance, and financial status.</li>
-        <li>Universities require better visibility into retention patterns.</li>
-      </ul>
+    <div class="card-grid">
+      <div class="card">
+        <h3>Advisors</h3>
+        <p>Need a consolidated view of academic and engagement trends to spot early warning signs.</p>
+      </div>
+      <div class="card">
+        <h3>Students</h3>
+        <p>Currently access fragmented information across LMS, grades, and financial portals.</p>
+      </div>
+      <div class="card">
+        <h3>University Leadership</h3>
+        <p>Require visibility into retention patterns, risk groups, and intervention effectiveness.</p>
+      </div>
     </div>
   </section>
 
-  <!-- SECTION: PROPOSED SOLUTION -->
-  <section class="section">
+  <!-- SOLUTION SECTION -->
+  <section class="section" id="solution">
     <h2>Proposed Solution</h2>
     <p>
-      Our platform provides unified dashboards, ML-powered risk predictions, and
-      advisor workflows for intervention.
+      A unified platform combining dashboards, ML-based risk scoring, academic insights, and secure
+      advisor workflows.
     </p>
 
     <div class="image-block">
       <h3>System Architecture</h3>
-      <img src="images/system_architecture_diagram.png" alt="System Architecture Diagram" class="image"/>
+      <img src="images/system_architecture_diagram.png" alt="System Architecture Diagram">
     </div>
 
+    <div class="image-block">
+      <h3>Machine Learning Pipeline</h3>
+      <img src="images/ml_pipeline_flow.png" alt="ML Pipeline Flow Diagram">
+    </div>
   </section>
 
-  <!-- SECTION: DATA DESIGN -->
-  <section class="section">
-    <h2>Data Design</h2>
+  <!-- DATA MODEL -->
+  <section class="section alt" id="data">
+    <h2>Data Design & ER Diagram</h2>
     <p>
-      The project uses 11 synthetic tables modeling students, courses, enrollments,
-      attendance, LMS events, term GPAs, financial aid, risk scores, and advising notes.
+      The synthetic dataset models 5,000 students with complete academic, engagement, and
+      financial histories across four academic terms.
     </p>
 
     <div class="image-block">
-      <h3>ER Diagram</h3>
-      <img src="images/Screenshot 2025-11-02 124915.png" alt="ER Diagram" class="image"/>
+      <img src="images/Screenshot 2025-11-02 124915.png" alt="ER Diagram">
     </div>
   </section>
 
-  <!-- SECTION: ML PIPELINE -->
-  <section class="section">
-    <h2>Machine Learning Pipeline</h2>
-    <p>
-      We trained a multi-class XGBoost model using engineered features representing
-      academic, engagement, and financial behaviors.
-    </p>
-    <div class="image-block">
-      <h3>ML Pipeline Flow</h3>
-      <img src="images/ml_pipeline_flow.png" alt="ML Pipeline Diagram" class="image"/>
-    </div>
-  </section>
-
-  <!-- SECTION: DASHBOARD -->
-  <section class="section">
+  <!-- DASHBOARD -->
+  <section class="section" id="dashboard">
     <h2>Dashboard Overview</h2>
-    <p>The dashboard supports both advisor and student views.</p>
 
     <div class="image-block">
       <h3>Advisor Dashboard</h3>
-      <img src="images/advisor_dashboard_overview.png" alt="Advisor Dashboard Screenshot" class="image"/>
+      <img src="images/advisor_dashboard_overview.png" alt="Advisor Dashboard">
     </div>
 
     <div class="image-block">
       <h3>Student Dashboard</h3>
-      <img src="images/student_dashboard_overview.png" alt="Student Dashboard Screenshot" class="image"/>
+      <img src="images/student_dashboard_overview.png" alt="Student Dashboard">
     </div>
-
   </section>
 
   <!-- FOOTER -->
   <footer class="footer">
-    <p>© 2025 Horizon Retention & Success Hub – Project Portfolio</p>
+    <p>© 2025 Horizon Retention & Success Hub — Project Portfolio</p>
   </footer>
 
 </body>
